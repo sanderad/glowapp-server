@@ -1,0 +1,2 @@
+npm run m:generate src/shared/migrations/CreateUserTable
+kill $(lsof -t -i:5000)
