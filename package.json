@@ -32,9 +32,7 @@
     "socket.io": "^4.8.3",
     "typeorm": "^0.3.17",
     "uuid": "^13.0.0",
-    "typescript": "^5.9.3"
-  },
-  "devDependencies": {
+    "typescript": "^5.9.3",
     "@types/bcryptjs": "^2.4.6",
     "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",
@@ -43,7 +41,9 @@
     "@types/multer": "^2.0.0",
     "@types/node": "^20.10.0",
     "@types/socket.io": "^3.0.1",
-    "@types/uuid": "^10.0.0",
+    "@types/uuid": "^10.0.0"
+  },
+  "devDependencies": {
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.1"
   }

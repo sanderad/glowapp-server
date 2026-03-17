@@ -34,7 +34,9 @@ AppDataSource.initialize()
         })
       );
 
-      app.get("/health", (req, res) => res.status(200).send("OK"));
+      app.get("/health", (req: express.Request, res: express.Response) =>
+        res.status(200).send("Backend Vivo! 🚀")
+      );
 
       app.use(cookieParser());
     });
