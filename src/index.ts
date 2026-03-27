@@ -29,6 +29,7 @@ AppDataSource.initialize()
           origin: [
             "http://localhost:5173",
             "https://pension-marks-progress-composer.trycloudflare.com",
+            "https://glow-app-client.vercel.app",
           ],
           credentials: true,
         })
