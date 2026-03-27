@@ -25,7 +25,16 @@ const storage = new CloudinaryStorage({
     folder: "glowapp_uploads",
     // Solo permitimos estos formatos seguros.
     // ¡IMPORTANTE: No ponemos format ni public_id custom para evitar el error 400!
-    allowed_formats: ["jpg", "jpeg", "png", "webp"],
+    allowed_formats: [
+      "jpg",
+      "jpeg",
+      "png",
+      "webp",
+      "mp4",
+      "mov",
+      "avi",
+      "avif",
+    ],
   } as any,
 });
 const upload = multer({ storage });
