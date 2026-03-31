@@ -86,10 +86,7 @@ export class AuthController {
 
       const result = await this.authService.login(dto);
 
-      console.log(
-        "3. ¡La base de datos respondió!",
-        result ? "Usuario encontrado" : "No existe"
-      );
+      console.log("3. ¡La base de datos respondió!", result);
 
       res.cookie("token", result.token, {
         httpOnly: true,
@@ -97,7 +94,7 @@ export class AuthController {
         sameSite: "lax",
         maxAge: 24 * 60 * 60 * 1000, // 1 day
       });
-      return res.json(result);
+      res.json(result);
     } catch (error: any) {
       // Por seguridad, siempre devolvemos 401 (Unauthorized) en login fallido
       console.error("❌ Error catastrófico en el login:", error);
