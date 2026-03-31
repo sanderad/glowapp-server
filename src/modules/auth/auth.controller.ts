@@ -75,14 +75,21 @@ export class AuthController {
     try {
       const dto = plainToClass(LoginDto, req.body);
 
+      console.log("1. Petición de login recibida en el backend");
       const errors = await validate(dto);
       if (errors.length > 0) {
         return res.status(400).json({
           errors: errors.map((e) => Object.values(e.constraints || {})),
         });
       }
+      console.log("2. A punto de buscar en la base de datos a:", dto.email);
 
       const result = await this.authService.login(dto);
+
+      console.log(
+        "3. ¡La base de datos respondió!",
+        result ? "Usuario encontrado" : "No existe"
+      );
 
       res.cookie("token", result.token, {
         httpOnly: true,
@@ -93,6 +100,7 @@ export class AuthController {
       return res.json(result);
     } catch (error: any) {
       // Por seguridad, siempre devolvemos 401 (Unauthorized) en login fallido
+      console.error("❌ Error catastrófico en el login:", error);
       return res.status(401).json({ error: error.message });
     }
   }
