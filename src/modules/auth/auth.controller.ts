@@ -94,7 +94,10 @@ export class AuthController {
         sameSite: "lax",
         maxAge: 24 * 60 * 60 * 1000, // 1 day
       });
-      res.json(result);
+
+      console.log("4. Token enviado en la respuesta");
+
+      return res.json(result);
     } catch (error: any) {
       // Por seguridad, siempre devolvemos 401 (Unauthorized) en login fallido
       console.error("❌ Error catastrófico en el login:", error);
