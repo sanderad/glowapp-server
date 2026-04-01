@@ -28,8 +28,8 @@ export const authenticateJWT = (
 
     res.cookie("token", newToken, {
       httpOnly: true,
-      secure: env.nodeEnv === "production",
-      sameSite: "lax",
+      secure: true,
+      sameSite: "none",
       maxAge: 24 * 60 * 60 * 1000, // 1 day
     });
 

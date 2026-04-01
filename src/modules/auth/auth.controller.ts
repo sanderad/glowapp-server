@@ -59,8 +59,8 @@ export class AuthController {
 
       res.cookie("token", result.token, {
         httpOnly: true,
-        secure: env.nodeEnv === "production",
-        sameSite: "lax",
+        secure: true,
+        sameSite: "none",
         maxAge: 24 * 60 * 60 * 1000, // 1 day
       });
 
@@ -90,8 +90,8 @@ export class AuthController {
 
       res.cookie("token", result.token, {
         httpOnly: true,
-        secure: env.nodeEnv === "production",
-        sameSite: "lax",
+        secure: true,
+        sameSite: "none",
         maxAge: 24 * 60 * 60 * 1000, // 1 day
       });
 
