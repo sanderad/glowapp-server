@@ -20,6 +20,7 @@ export enum StylistCategory {
   BARBER = "Barbería",
   FACIAL = "Facial",
   MAKEUP = "Maquillaje",
+  CORPORAL = "Corporal",
   OTHER = "Otro",
 }
 
