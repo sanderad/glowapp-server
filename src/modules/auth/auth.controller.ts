@@ -46,6 +46,18 @@ export class AuthController {
   @httpPost("/register/stylist")
   public async registerStylist(req: Request, res: Response) {
     try {
+      const counter = new Map<string, number>()
+      
+      counter.set('hola', 1)
+      counter.has("hola")
+      const val = counter.get("hola")
+      counter.delete("hola")
+      counter.set('hola', 2)
+
+        counter.values().forEach((value) => {
+          console.log(value)
+        })
+
       const dto = plainToClass(RegisterStylistDto, req.body);
 
       // Validar (incluyendo los servicios anidados)
